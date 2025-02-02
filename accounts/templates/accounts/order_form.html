@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST">
+	{% csrf_token %}
+
+	<p class="btn btn-sm btn-info">Customer Name: {{customer_name}}</p>
+	{% for form in formset %}
+	{{ formset.management_form }}
+		{{form}}
+		<hr>
+	{% endfor %}
+	
+
+	<input type="submit" name="submit">
+	
+</form>
+
+{% endblock %}
